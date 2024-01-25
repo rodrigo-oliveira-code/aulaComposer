@@ -11,21 +11,21 @@ class Email
 {
     private $mail = \stdClass::class;
     
-    public function __construct()
+    public function __construct($smtpDebug, $host, $user, $pass, $smtpSecure, $port, $setFromEmail, $setFromName )
     {
         $this->mail = new PHPMailer(true);
-        $this->mail->SMTPDebug = 'tls';
-        $this->mail->isSMTP();                                            //Send using SMTP
-        $this->mail->Host       = 'smtp.gmail.com';                        //Set the SMTP server to send through
-        $this->mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-        $this->mail->Username   = 'rodrigo.oliveirafln@gmail.com';                     //SMTP username
-        $this->mail->Password   = 'flgslfhfxxacfrxl';                               //SMTP password
-        $this->mail->SMTPSecure = 'tls';            //Enable implicit TLS encryption
-        $this->mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+        $this->mail->SMTPDebug = $smtpDebug;
+        $this->mail->isSMTP();
+        $this->mail->Host       = $host;
+        $this->mail->SMTPAuth   = true;
+        $this->mail->Username   = $user;
+        $this->mail->Password   = $pass;
+        $this->mail->SMTPSecure = $smtpSecure;
+        $this->mail->Port       = $port;                                  
         $this->mail->CharSet    = 'utf-8';
         $this->mail->setLanguage('br');
         $this->mail->isHTML(true);
-        $this->mail->setFrom('rodrigo.fln@hotmail.com', 'Equipe Rodrigo Oliveira');
+        $this->mail->setFrom($setFromEmail, $setFromName);
     }
         
     public function sendMail($subject, $body, $replyEmail, $replyName, $adressEmail, $adressName)

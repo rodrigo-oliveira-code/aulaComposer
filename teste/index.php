@@ -1,10 +1,11 @@
 <?php
 
-require __DIR__ . '/lib_ext/autoload.php';
+require __DIR__ . '/../lib_ext/autoload.php';
 
 use aulaComposer\Email;
 
-$novoEmail = new Email;
+$novoEmail = new Email(2,"smtp.gmail.com","rodrigo.oliveirafln@gmail.com","blwhifwuhnhnjwup
+","tls",'587',"rodrigo.oliveirafln@gmail.com","Rodigo");
 $novoEmail->sendMail
 (
     "Assunto de Teste",
