@@ -5,7 +5,7 @@ This library's function is to send email using the phpmailer library. Doing this
 To install the library, run the following command:
 
 ```sh
-composer require gustavoweb/composer_teste
+composer require digo/aula-composer
 ```
 
 To use the library, simply require the composer to autoload, invoke the class and make the method call:
