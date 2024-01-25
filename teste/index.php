@@ -4,16 +4,8 @@ require __DIR__ . '/../lib_ext/autoload.php';
 
 use aulaComposer\Email;
 
-$novoEmail = new Email(2,"smtp.gmail.com","rodrigo.oliveirafln@gmail.com","blwhifwuhnhnjwup
-","tls",'587',"rodrigo.oliveirafln@gmail.com","Rodigo");
-$novoEmail->sendMail
-(
-    "Assunto de Teste",
-    "<p>Este e-mail foi enviado dentro do <b>componente</b></p>",
-    "rodrigo.fln@hotmail.com",
-    "Rodrigo Oliver",
-    "rodrigo.oliveirafln@gmail.com",
-    "Rodrigo "
-);
+$novoEmail = new Email(2, "mail.host.com", "your@email.com", "your-pass", "smtp secure (tls/ssl)", "port (587)",
+    "from@email.com", "From Name");
+$novoEmail->sendMail("Subject", "Content", "reply@email.com", "Replay Name", "address@email.com", "Address Name");
 
 var_dump($novoEmail);

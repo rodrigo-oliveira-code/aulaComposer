@@ -20,7 +20,7 @@ USE Notification\Email;
 $email = new Email(2, "mail.host.com", "your@email.com", "your-pass", "smtp secure (tls/ssl)", "port (587)",
      "from@email.com", "From Name");
 
-$email->sendEmail("SUbject", "Content", "reply@email.com", "Replay Name", "address@email.com", "Address Name");
+$email->sendEmail("Subject", "Content", "reply@email.com", "Replay Name", "address@email.com", "Address Name");
 ```
 
 Note that the entire email sending configuration is using the magic constructor method! Once the constructor method has been invoked within your application, your system will be able to carry out the triggers.
